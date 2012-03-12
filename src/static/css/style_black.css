@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.fulltable {
+    height: 100%;
+}
+
+#mu {
+    float: left;
+    width: 65px;
+    height: 31px;
+    background: transparent no-repeat scroll 0;
+    margin: 0 4px 0 6px;
+}
+
+/* text left */
+#tl {
+    float: left;
+    margin: 8px 0 8px 4px;
+    white-space: nowrap;
+}
+
+
+/* text blue */
+#tb {
+    float: left;
+    color: #0083FF;
+    font-weight: bold;
+    margin: 8px 10px 8px 0;
+    white-space: nowrap;
+}
+
+.fr {
+    float: right;
+}
+
+/* text right */
+#tr {
+    float: right;
+    margin: 8px 7px 8px 0;
+    white-space: nowrap;
+}
+
+
+/*Lior - firefox4 on mac outline bug*/
+object{outline:none;}
+
+/* Lior - social footer persol ver */
+.pageContent { width:1000px; margin:0 auto}
+.mainContent { width:1000px; margin:0 auto; border:1px solid red; height:500px;}
+
