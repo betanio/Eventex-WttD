@@ -79,12 +79,13 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
 )
 
-subscription = {'name' : 'Adalberto Carneiro',
+SUBSCRIPTION_FORM = {'name' : 'Adalberto Carneiro',
                   'created_at' : '29/08/2013',
-                  #'phone' : '558899-46333',
+                  'phone' : '558899-46333',
                  'email' : 'adalberto@carneiro.gov.br',
 }
 
+SUBSCRIPTION_FORM_email = 'adalberto@carneiro.gov.br'
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -129,10 +130,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'core',
+    'subscriptions',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -157,3 +159,32 @@ LOGGING = {
         },
     }
 }
+
+# Envio de e-mail - dummy - para testes
+# EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+# Envio de e-mail - servidor SMTP
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Envio de e-mail - console
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_DEFAULT_FROM', '')
+DEFAULT_FROM_EMAIL = 'contato@eventex.com.br'
+
+if 'True' == os.environ.get('SEND_EMAIL', 'False'):
+    # Envio de e-mail - servidor Gmail
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    # EMAIL_HOST = os.environ.get('EMAIL_HOST_SERVER', '')
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+    # EMAIL_PORT = os.environ.get('EMAIL_HOST_PORT', '')
+    EMAIL_PORT = 587
+    # EMAIL_USE_TLS = os.environ.get('EMAIL_HOST_TLS', '')
+    EMAIL_USE_TLS = True
+else:
+    # Envio de e-mail - console
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
