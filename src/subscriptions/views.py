@@ -18,9 +18,15 @@ def subscribe(request):
         return new(request)
 
 
-
+# Valores padrao do form na instanciação
+# TODO: javascript para limpar os valores default quando usuario clica em cada campo
 def new(request):
-    form = SubscriptionForm()
+    form = SubscriptionForm(initial={
+        'name': 'Entre o seu nome',
+        'cpf': 'Digite o seu CPF sem pontos',
+        'email': 'Informe o seu email',
+        'phone': 'Qual seu telefone de contato?',
+    })
 
     context = RequestContext(request, {'form' : form})
     return render_to_response('subscriptions/new.html', context)

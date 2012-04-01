@@ -1,0 +1,61 @@
+
+
+
+python src/manage.py -h 2>south_help_01
+
+grep south'\|'migrat'\|'sync south_help_01.TXT
+
+
+  convert_to_south
+  datamigration
+  graphmigrations
+  migrate
+  migrationcheck
+  schemamigration
+  startmigration
+  syncdb
+
+
+
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+  changepassword
+  cleanup
+  collectstatic
+  compilemessages
+  convert_to_south
+  createcachetable
+  createsuperuser
+  datamigration
+  dbshell
+  diffsettings
+  dumpdata
+  findstatic
+  flush
+  graphmigrations
+  inspectdb
+  loaddata
+  makemessages
+  migrate
+  migrationcheck
+  reset
+  runfcgi
+  runserver
+  schemamigration
+  shell
+  sql
+  sqlall
+  sqlclear
+  sqlcustom
+  sqlflush
+  sqlindexes
+  sqlinitialdata
+  sqlreset
+  sqlsequencereset
+  startapp
+  startmigration
+  syncdb
+  test
+  testserver
+  validate
