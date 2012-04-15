@@ -51,7 +51,7 @@ class Contact(models.Model):
     faxes = KindContactManager('F')
 
     class Meta:
-        verbose_name = _('Contato')    
+        verbose_name = _('Contato')
 
     def __unicode__(self):
         return u'%s, %s' % (self.kind, self.value)
