@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     (r'^$', homepage),
     (r'^inscricao/', include('subscriptions.urls', namespace='subscriptions')),
+    (r'^', include('core.urls', namespace='core')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
