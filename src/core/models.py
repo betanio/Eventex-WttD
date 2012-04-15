@@ -37,7 +37,7 @@ class KindContactManager(models.Manager):
 class Contact(models.Model):
     KINDS = (
         ('P', _('Telefone')),
-        ('E', _('E-­mail')),
+        ('E', _('E-mail')),
         ('F', _('Fax')),
     )
     
