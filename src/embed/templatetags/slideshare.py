@@ -12,7 +12,7 @@ register = template.Library()
 def do_slideshare(parser, token):
     try:
         # split_contents() knows not to split quoted strings.
-        tag_name, id_ = token.split_contents()
+        tag_name, id_, doc = token.split_contents()
     except ValueError:
         raise template.TemplateSyntaxError, "%r tag requires 2 arguments" % token.contents.split()[0]
     return SlideShareNode(id_, doc)
@@ -29,6 +29,7 @@ class SlideShareNode(Node):
         except template.VariableDoesNotExist:
             actual_id = self.id
 
+        try:
             actual_doc = self.doc.resolve(context)
         except template.VariableDoesNotExist:
             actual_doc = self.doc
